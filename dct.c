@@ -31,18 +31,18 @@ float	in[N][N]=
 				{162,  162, 161, 160, 161, 157, 157, 157},
 				{162,  162, 161, 160, 163, 157, 158, 154}};
 
-	for (u=0;u<8;u++)
+	for (u=0;u<N;u++)
 	{
-		for (v=0;v<8;v++)
+		for (v=0;v<N;v++)
 		{
 			sum=0;
-			for (x=0;x<8;x++)
+			for (x=0;x<N;x++)
 			{
-				for (y=0;y<8;y++)
+				for (y=0;y<N;y++)
 				{
-					sum=sum+in[x][y]*
-						cos(((2.0*x+1)*u*PI)/16.0)*
-						cos(((2.0*y+1)*v*PI)/16.0);
+					sum+=in[x][y]*
+						 cos(((2.0*x+1)*u*PI)/(2.0*N))*
+						 cos(((2.0*y+1)*v*PI)/(2.0*N));
 				}
 			}
 
@@ -66,8 +66,8 @@ float	in[N][N]=
 				for (v=0;v<N;v++)
 				{
 					sum += getCval(u,v)*fdct[u][v]*
-						   cos(((2.0*y+1)*v*PI)/16.0)*
-						   cos(((2.0*x+1)*u*PI)/16.0);
+						   cos(((2.0*y+1)*v*PI)/(2.0*N))*
+						   cos(((2.0*x+1)*u*PI)/(2.0*N));
 				}
 			}
 			idct[x][y]=sum;
