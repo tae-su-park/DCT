@@ -40,7 +40,8 @@ float	in[N][N]=
 			{
 				for (y=0;y<8;y++)
 				{
-					sum=sum+in[x][y]*cos(((2.0*x+1)*u*PI)/16.0)*
+					sum=sum+in[x][y]*
+						cos(((2.0*x+1)*u*PI)/16.0)*
 						cos(((2.0*y+1)*v*PI)/16.0);
 				}
 			}
